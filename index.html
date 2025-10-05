@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ρομαντικό Μήνυμα</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 700px;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    h1 {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 2rem;
+    }
+    .hint {
+      position: absolute;
+      bottom: 15px;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      animation: fade 2s infinite alternate;
+    }
+    @keyframes fade {
+      from {opacity: 1;}
+      to {opacity: 0.4;}
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>
+      Να γελάσεις απ' τα βάθη των χρυσών σου ματιών<br>
+      είμαστε μες στο δικό μας κόσμο.<br><br>
+      Η πιο όμορφη θάλασσα είναι αυτή που δεν έχουμε ακόμα ταξιδέψει.<br>
+      Τα πιο όμορφα παιδιά δεν έχουν μεγαλώσει ακόμα.<br>
+      Κι αυτό που θέλω να σου πω, το πιο όμορφο απ' όλα<br>
+      δε σ' το 'χω πει ακόμα.
+    </h1>
+  </div>
+  <div class="hint">✨ Πάτησε οπουδήποτε στην οθόνη ✨</div>
+
+  <audio id="bgmusic" loop>
+    <source src="https://voca.ro/16wRmLvULzIR.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bgmusic");
+    document.body.addEventListener("click", () => {
+      music.play();
+      document.querySelector(".hint").style.display = "none";
+    }, { once: true });
+  </script>
+</body>
+</html>
